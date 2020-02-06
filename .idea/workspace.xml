@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d7da5cb-ebd0-4e8f-8ec8-8a20288ee3a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/App/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App/styles.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +80,16 @@
       <option name="presentableId" value="Default" />
       <updated>1580912013492</updated>
       <workItem from="1580912015919" duration="2120000" />
+      <workItem from="1580982455493" duration="2130000" />
     </task>
+    <task id="LOCAL-00001" summary="02: Slate init">
+      <created>1580982527321</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580982527321</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -85,25 +100,31 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="02: Slate init" />
+    <option name="LAST_COMMIT_MESSAGE" value="02: Slate init" />
   </component>
   <component name="WindowStateProjectService">
     <state x="648" y="335" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580982057119">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="648" y="335" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1580982057119" />
-    <state x="698" y="354" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580916872921">
+    <state x="698" y="354" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580987753645">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="698" y="354" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1580916872921" />
-    <state x="480" y="112" key="CommitChangelistDialog2" timestamp="1580918248244">
+    <state x="698" y="354" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1580987753645" />
+    <state x="480" y="112" key="CommitChangelistDialog2" timestamp="1580988506895">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="480" y="112" key="CommitChangelistDialog2/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1580918248244" />
+    <state x="480" y="112" key="CommitChangelistDialog2/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1580988506895" />
     <state x="461" y="239" key="SettingsEditor" timestamp="1580917014826">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -116,9 +137,9 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="644" y="444" key="git4idea.ui.GitTagDialog/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1580918223736" />
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1580982171489">
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1580982568586">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1580982171489" />
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1580982568586" />
   </component>
 </project>

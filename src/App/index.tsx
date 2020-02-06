@@ -2,7 +2,9 @@ import React, { useMemo, useState } from "react";
 import { createEditor, Node } from "slate";
 import { Slate, Editable, withReact } from "slate-react";
 
-const App: React.FC = () => {
+import { Container, EditorStyles } from "./styles";
+
+export const App: React.FC = () => {
   const editor = useMemo(() => withReact(createEditor()), []);
   const [value, setValue] = useState<Node[]>([
     {
@@ -12,10 +14,16 @@ const App: React.FC = () => {
   ]);
 
   return (
-    <Slate editor={editor} value={value} onChange={value => setValue(value)}>
-      <Editable />
-    </Slate>
+    <Container>
+      <EditorStyles>
+        <Slate
+          editor={editor}
+          value={value}
+          onChange={value => setValue(value)}
+        >
+          <Editable />
+        </Slate>
+      </EditorStyles>
+    </Container>
   );
 };
-
-export default App;
