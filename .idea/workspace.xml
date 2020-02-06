@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d7da5cb-ebd0-4e8f-8ec8-8a20288ee3a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/markdown-navigator-enh.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +80,22 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
+    <state x="648" y="335" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580982057119">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="648" y="335" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1580982057119" />
     <state x="698" y="354" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580916872921">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -102,13 +108,17 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="461" y="239" key="SettingsEditor/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1580917014826" />
+    <state x="100" y="100" width="1720" height="1000" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1580918670016">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="100" y="100" width="1720" height="1000" key="com.intellij.dvcs.ui.CompareBranchesDialog/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1580918670016" />
     <state x="644" y="444" key="git4idea.ui.GitTagDialog" timestamp="1580918223736">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="644" y="444" key="git4idea.ui.GitTagDialog/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1580918223736" />
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1580918216094">
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1580982171489">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1580918216094" />
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1580982171489" />
   </component>
 </project>
