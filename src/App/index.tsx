@@ -15,12 +15,16 @@ export const App: React.FC = () => {
   ]);
   const [cursorPosition, setCursorPosition] = useState<DOMRect | null>(null);
   const [currentWord, setCurrentWord] = useState("");
+  const [currentWordOffset, setCurrentWordOffset] = useState(0);
 
   useEffect(() => {
     const sel = window.getSelection();
     if (!sel || sel.rangeCount === 0) return;
-    setCursorPosition(sel.getRangeAt(0).getBoundingClientRect());
-  }, [currentWord]);
+    const range = sel.getRangeAt(0).cloneRange();
+    range.setStart(sel.anchorNode!, currentWordOffset);
+    range.collapse(true);
+    setCursorPosition(range.getBoundingClientRect());
+  }, [currentWord, currentWordOffset]);
 
   const handleChange = (value: Node[]): void => {
     setValue(value);
@@ -34,7 +38,13 @@ export const App: React.FC = () => {
     const allWords = node.text.split(/\W/);
     const wordsToSelection = textToSelection.split(/\W/);
     const currentIndex = wordsToSelection.length - 1;
+
+    const currentWordOffset =
+      textToSelection.length -
+      wordsToSelection[wordsToSelection.length - 1].length;
+
     setCurrentWord(allWords[currentIndex]);
+    setCurrentWordOffset(currentWordOffset);
   };
 
   return (
