@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { createEditor, Node } from "slate";
+import { createEditor, Node, Editor, Range } from "slate";
 import { Slate, Editable, withReact } from "slate-react";
 
 import { Container, EditorStyles } from "./styles";
@@ -14,12 +14,28 @@ export const App: React.FC = () => {
     }
   ]);
   const [cursorPosition, setCursorPosition] = useState<DOMRect | null>(null);
+  const [currentWord, setCurrentWord] = useState("");
 
   useEffect(() => {
     const sel = window.getSelection();
     if (!sel || sel.rangeCount === 0) return;
     setCursorPosition(sel.getRangeAt(0).getBoundingClientRect());
-  }, [value]);
+  }, [currentWord]);
+
+  const handleChange = (value: Node[]): void => {
+    setValue(value);
+    if (!editor.selection) return;
+    const [node] = Editor.node(editor, editor.selection);
+    if (!node.text) return;
+    const textToSelection = node.text.slice(
+      0,
+      Range.start(editor.selection).offset
+    );
+    const allWords = node.text.split(/\W/);
+    const wordsToSelection = textToSelection.split(/\W/);
+    const currentIndex = wordsToSelection.length - 1;
+    setCurrentWord(allWords[currentIndex]);
+  };
 
   return (
     <>
@@ -28,13 +44,18 @@ export const App: React.FC = () => {
           <Slate
             editor={editor}
             value={value}
-            onChange={value => setValue(value)}
+            onChange={value => handleChange(value)}
           >
             <Editable />
           </Slate>
         </EditorStyles>
       </Container>
-      {cursorPosition && <FloatingMenu cursorPosition={cursorPosition} />}
+      {cursorPosition && (
+        <FloatingMenu
+          cursorPosition={cursorPosition}
+          currentWord={currentWord}
+        />
+      )}
     </>
   );
 };

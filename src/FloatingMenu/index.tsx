@@ -5,12 +5,16 @@ import { StyledFloatingMenu } from "./styles";
 
 interface FloatingMenu {
   cursorPosition: DOMRect;
+  currentWord: string;
 }
 
-export const FloatingMenu: React.FC<FloatingMenu> = ({ cursorPosition }) => {
+export const FloatingMenu: React.FC<FloatingMenu> = ({
+  cursorPosition,
+  currentWord
+}) => {
   return ReactDOM.createPortal(
     <StyledFloatingMenu position={cursorPosition}>
-      Floating Menu!
+      {currentWord}
     </StyledFloatingMenu>,
     document.body
   );
