@@ -3,6 +3,7 @@ import { createEditor, Node } from "slate";
 import { Slate, Editable, withReact } from "slate-react";
 
 import { Container, EditorStyles } from "./styles";
+import { FloatingMenu } from "../FloatingMenu";
 
 export const App: React.FC = () => {
   const editor = useMemo(() => withReact(createEditor()), []);
@@ -20,20 +21,20 @@ export const App: React.FC = () => {
     setCursorPosition(sel.getRangeAt(0).getBoundingClientRect());
   }, [value]);
 
-  // sanity check:
-  console.log(cursorPosition);
-
   return (
-    <Container>
-      <EditorStyles>
-        <Slate
-          editor={editor}
-          value={value}
-          onChange={value => setValue(value)}
-        >
-          <Editable />
-        </Slate>
-      </EditorStyles>
-    </Container>
+    <>
+      <Container>
+        <EditorStyles>
+          <Slate
+            editor={editor}
+            value={value}
+            onChange={value => setValue(value)}
+          >
+            <Editable />
+          </Slate>
+        </EditorStyles>
+      </Container>
+      {cursorPosition && <FloatingMenu cursorPosition={cursorPosition} />}
+    </>
   );
 };
