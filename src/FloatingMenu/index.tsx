@@ -2,19 +2,27 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import { StyledFloatingMenu } from "./styles";
+import { FloatingMenuItem } from "./FloatingMenuItem";
 
 interface FloatingMenu {
   cursorPosition: DOMRect;
-  currentWord: string;
+  currentWords: string[];
 }
 
 export const FloatingMenu: React.FC<FloatingMenu> = ({
   cursorPosition,
-  currentWord
+  currentWords
 }) => {
   return ReactDOM.createPortal(
     <StyledFloatingMenu position={cursorPosition}>
-      {currentWord}
+      {currentWords.map((word, index) => (
+        <FloatingMenuItem
+          onClick={() => console.log(`clicked: ${index}`)}
+          onMouseOver={() => console.log(`mouseOver: ${index}`)}
+        >
+          {word}
+        </FloatingMenuItem>
+      ))}
     </StyledFloatingMenu>,
     document.body
   );

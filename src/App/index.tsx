@@ -10,6 +10,12 @@ const searchThesaurus = (word: string) =>
   fetch(`https://api.datamuse.com/words?ml=${word}&max=10`);
 const searchThesaurusDebounced = AwesomeDebouncePromise(searchThesaurus, 500);
 
+interface apiResult {
+  word: string;
+  score: number;
+  tags: string[];
+}
+
 export const App: React.FC = () => {
   const editor = useMemo(() => withReact(createEditor()), []);
   const [value, setValue] = useState<Node[]>([
@@ -21,6 +27,8 @@ export const App: React.FC = () => {
   const [cursorPosition, setCursorPosition] = useState<DOMRect | null>(null);
   const [currentWord, setCurrentWord] = useState("");
   const [currentWordOffset, setCurrentWordOffset] = useState(0);
+  const [loadingResults, setLoadingResults] = useState(false);
+  const [thesaurusResults, setThesaurusResults] = useState<string[]>([]);
 
   useEffect(() => {
     const sel = window.getSelection();
@@ -51,10 +59,14 @@ export const App: React.FC = () => {
 
     setCurrentWord(currentWord);
     setCurrentWordOffset(currentWordOffset);
-    const results = await searchThesaurusDebounced(currentWord).then(response =>
-      response.json()
-    );
-    console.log(results);
+
+    setLoadingResults(true);
+    await searchThesaurusDebounced(currentWord)
+      .then(response => response.json())
+      .then((results: apiResult[]) => {
+        setThesaurusResults(results.map(result => result.word));
+        setLoadingResults(false);
+      });
   };
 
   return (
@@ -70,10 +82,10 @@ export const App: React.FC = () => {
           </Slate>
         </EditorStyles>
       </Container>
-      {cursorPosition && (
+      {!loadingResults && cursorPosition && (
         <FloatingMenu
           cursorPosition={cursorPosition}
-          currentWord={currentWord}
+          currentWords={thesaurusResults}
         />
       )}
     </>
