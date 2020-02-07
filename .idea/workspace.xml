@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d7da5cb-ebd0-4e8f-8ec8-8a20288ee3a0" name="Default Changelist" comment="09: displaying words and updating the floating menu">
-      <change afterPath="$PROJECT_DIR$/src/FloatingMenu/FloatingMenuItem.tsx" afterDir="false" />
+    <list default="true" id="6d7da5cb-ebd0-4e8f-8ec8-8a20288ee3a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FloatingMenu/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/FloatingMenu/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FloatingMenu/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/FloatingMenu/styles.tsx" afterDir="false" />
     </list>
+    <list id="de99e8cb-5af4-442a-94ac-8f38c934d9c3" name="09: displaying words and updating the floating menu" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +13,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectId" id="1XOL5qx0rO9V2WE1NzXiERQKFCI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -127,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581074751733</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="09: displaying words and updating the floating menu">
+      <created>1581079296448</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1581079296448</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,7 +160,8 @@
     <MESSAGE value="06: Get and display current word" />
     <MESSAGE value="07: Fix the floating menu position" />
     <MESSAGE value="08: Fetching Thesaurus Data" />
-    <option name="LAST_COMMIT_MESSAGE" value="08: Fetching Thesaurus Data" />
+    <MESSAGE value="09: displaying words and updating the floating menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="09: displaying words and updating the floating menu" />
   </component>
   <component name="WindowStateProjectService">
     <state x="648" y="335" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580982057119">
@@ -165,18 +172,26 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="698" y="354" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1580987753645" />
-    <state x="480" y="112" width="1207" height="1063" key="CommitChangelistDialog2" timestamp="1581078090378">
+    <state x="480" y="112" width="1207" height="1063" key="CommitChangelistDialog2" timestamp="1581079296381">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="480" y="112" width="1207" height="1063" key="CommitChangelistDialog2/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1581078090378" />
+    <state x="480" y="112" width="1207" height="1063" key="CommitChangelistDialog2/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1581079296381" />
     <state x="461" y="239" key="SettingsEditor" timestamp="1580917014826">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="461" y="239" key="SettingsEditor/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1580917014826" />
+    <state x="810" y="514" key="VCS.ChangelistChooser" timestamp="1581079362093">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="810" y="514" key="VCS.ChangelistChooser/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1581079362093" />
     <state x="100" y="100" width="1720" height="1000" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1580918670016">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="100" y="100" width="1720" height="1000" key="com.intellij.dvcs.ui.CompareBranchesDialog/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1580918670016" />
+    <state x="722" y="330" key="git4idea.rebase.GitRebaseEditor" timestamp="1581079335415">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="722" y="330" key="git4idea.rebase.GitRebaseEditor/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1581079335415" />
     <state x="644" y="444" key="git4idea.ui.GitTagDialog" timestamp="1580918223736">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>

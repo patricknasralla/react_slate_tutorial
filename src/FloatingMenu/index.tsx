@@ -17,6 +17,7 @@ export const FloatingMenu: React.FC<FloatingMenu> = ({
     <StyledFloatingMenu position={cursorPosition}>
       {currentWords.map((word, index) => (
         <FloatingMenuItem
+          key={index + word}
           onClick={() => console.log(`clicked: ${index}`)}
           onMouseOver={() => console.log(`mouseOver: ${index}`)}
         >
