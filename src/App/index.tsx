@@ -1,9 +1,14 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { createEditor, Node, Editor, Range } from "slate";
 import { Slate, Editable, withReact } from "slate-react";
+import AwesomeDebouncePromise from "awesome-debounce-promise";
 
 import { Container, EditorStyles } from "./styles";
 import { FloatingMenu } from "../FloatingMenu";
+
+const searchThesaurus = (word: string) =>
+  fetch(`https://api.datamuse.com/words?ml=${word}&max=10`);
+const searchThesaurusDebounced = AwesomeDebouncePromise(searchThesaurus, 500);
 
 export const App: React.FC = () => {
   const editor = useMemo(() => withReact(createEditor()), []);
@@ -26,7 +31,7 @@ export const App: React.FC = () => {
     setCursorPosition(range.getBoundingClientRect());
   }, [currentWord, currentWordOffset]);
 
-  const handleChange = (value: Node[]): void => {
+  const handleChange = async (value: Node[]) => {
     setValue(value);
     if (!editor.selection) return;
     const [node] = Editor.node(editor, editor.selection);
@@ -38,13 +43,18 @@ export const App: React.FC = () => {
     const allWords = node.text.split(/\W/);
     const wordsToSelection = textToSelection.split(/\W/);
     const currentIndex = wordsToSelection.length - 1;
+    const currentWord = allWords[currentIndex];
 
     const currentWordOffset =
       textToSelection.length -
       wordsToSelection[wordsToSelection.length - 1].length;
 
-    setCurrentWord(allWords[currentIndex]);
+    setCurrentWord(currentWord);
     setCurrentWordOffset(currentWordOffset);
+    const results = await searchThesaurusDebounced(currentWord).then(response =>
+      response.json()
+    );
+    console.log(results);
   };
 
   return (
