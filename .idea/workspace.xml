@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d7da5cb-ebd0-4e8f-8ec8-8a20288ee3a0" name="Default Changelist" comment="">
+    <list default="true" id="6d7da5cb-ebd0-4e8f-8ec8-8a20288ee3a0" name="Default Changelist" comment="09: displaying words and updating the floating menu&#10;(added key prop to floatingMenu to stop react warning)">
+      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator-enh.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/markdown-navigator-enh.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FloatingMenu/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/FloatingMenu/index.tsx" afterDir="false" />
     </list>
     <list id="de99e8cb-5af4-442a-94ac-8f38c934d9c3" name="09: displaying words and updating the floating menu" comment="" />
@@ -12,6 +24,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
@@ -19,7 +36,6 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -51,18 +67,6 @@
       <envs />
       <method v="2" />
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -144,13 +148,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="02: Slate init" />
@@ -176,6 +179,22 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="480" y="112" width="1207" height="1063" key="CommitChangelistDialog2/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1581079296381" />
+    <state width="1899" height="237" key="GridCell.Tab.0.bottom" timestamp="1587472956327">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1899" height="237" key="GridCell.Tab.0.bottom/1920.176.1366.1024/-2560.-525.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1587472956327" />
+    <state width="1899" height="237" key="GridCell.Tab.0.center" timestamp="1587472956324">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1899" height="237" key="GridCell.Tab.0.center/1920.176.1366.1024/-2560.-525.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1587472956324" />
+    <state width="1899" height="237" key="GridCell.Tab.0.left" timestamp="1587472956321">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1899" height="237" key="GridCell.Tab.0.left/1920.176.1366.1024/-2560.-525.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1587472956321" />
+    <state width="1899" height="237" key="GridCell.Tab.0.right" timestamp="1587472956325">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1899" height="237" key="GridCell.Tab.0.right/1920.176.1366.1024/-2560.-525.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1587472956325" />
     <state x="461" y="239" key="SettingsEditor" timestamp="1580917014826">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -196,9 +215,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="644" y="444" key="git4idea.ui.GitTagDialog/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1580918223736" />
-    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1580982568586">
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1587466034136">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/-2560.-240.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1580982568586" />
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/1920.176.1366.1024/-2560.-525.2560.1440/0.0.1920.1200@0.0.1920.1200" timestamp="1587466034136" />
   </component>
 </project>

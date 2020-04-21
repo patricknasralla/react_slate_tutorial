@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { createEditor, Node, Editor, Range } from "slate";
-import { Slate, Editable, withReact } from "slate-react";
+import { createEditor, Node, Editor, Range, Transforms } from "slate";
+import { Slate, Editable, withReact, ReactEditor } from "slate-react";
 import AwesomeDebouncePromise from "awesome-debounce-promise";
 
 import { Container, EditorStyles } from "./styles";
@@ -25,8 +25,7 @@ export const App: React.FC = () => {
     }
   ]);
   const [cursorPosition, setCursorPosition] = useState<DOMRect | null>(null);
-  const [currentWord, setCurrentWord] = useState("");
-  const [currentWordOffset, setCurrentWordOffset] = useState(0);
+  const [currentWordRange, setCurrentWordRange] = useState<Range | null>(null);
   const [loadingResults, setLoadingResults] = useState(false);
   const [thesaurusResults, setThesaurusResults] = useState<string[]>([]);
 
@@ -34,13 +33,13 @@ export const App: React.FC = () => {
     const sel = window.getSelection();
     if (!sel || sel.rangeCount === 0) return;
     const range = sel.getRangeAt(0).cloneRange();
-    range.setStart(sel.anchorNode!, currentWordOffset);
+    const offset = currentWordRange ? currentWordRange.anchor.offset : 0;
+    range.setStart(sel.anchorNode!, offset);
     range.collapse(true);
     setCursorPosition(range.getBoundingClientRect());
-  }, [currentWord, currentWordOffset]);
+  }, [currentWordRange]);
 
-  const handleChange = async (value: Node[]) => {
-    setValue(value);
+  function updateCurrentWord() {
     if (!editor.selection) return;
     const [node] = Editor.node(editor, editor.selection);
     if (!node.text) return;
@@ -57,16 +56,54 @@ export const App: React.FC = () => {
       textToSelection.length -
       wordsToSelection[wordsToSelection.length - 1].length;
 
-    setCurrentWord(currentWord);
-    setCurrentWordOffset(currentWordOffset);
+    setCurrentWordRange({
+      anchor: {
+        path: editor.selection.anchor.path,
+        offset: currentWordOffset
+      },
+      focus: {
+        path: editor.selection.focus.path,
+        offset: currentWordOffset + currentWord.length
+      },
+      word: currentWord
+    });
 
+    // don't make a request if the word hasn't changed!
+    if (!currentWordRange || currentWord === currentWordRange.word) return;
     setLoadingResults(true);
-    await searchThesaurusDebounced(currentWord)
+    searchThesaurusDebounced(currentWord)
       .then(response => response.json())
       .then((results: apiResult[]) => {
         setThesaurusResults(results.map(result => result.word));
         setLoadingResults(false);
       });
+  }
+
+  const handleChange = (value: Node[]) => {
+    setValue(value);
+    updateCurrentWord();
+  };
+
+  const handleInsertWord = (index: number) => {
+    if (!currentWordRange) throw new Error("No Range found!");
+
+    const stringToInsert = thesaurusResults[index];
+    // replace the word with the newly selected one:
+    Transforms.insertText(editor, stringToInsert, {
+      at: currentWordRange
+    });
+
+    // set the selection to be at the end of the newly inserted word.
+    Transforms.select(editor, {
+      path: currentWordRange.anchor.path,
+      offset: currentWordRange.anchor.offset + stringToInsert.length
+    });
+
+    // focus back on the editor
+    ReactEditor.focus(editor);
+
+    // update the current word to reflect the change
+    updateCurrentWord();
   };
 
   return (
@@ -86,6 +123,7 @@ export const App: React.FC = () => {
         <FloatingMenu
           cursorPosition={cursorPosition}
           currentWords={thesaurusResults}
+          onClick={index => handleInsertWord(index)}
         />
       )}
     </>
