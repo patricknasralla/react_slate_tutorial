@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { KeyboardEvent, useEffect, useMemo, useState } from "react";
 import { createEditor, Node, Editor, Range, Transforms } from "slate";
 import { Slate, Editable, withReact, ReactEditor } from "slate-react";
 import AwesomeDebouncePromise from "awesome-debounce-promise";
@@ -28,6 +28,7 @@ export const App: React.FC = () => {
   const [currentWordRange, setCurrentWordRange] = useState<Range | null>(null);
   const [loadingResults, setLoadingResults] = useState(false);
   const [thesaurusResults, setThesaurusResults] = useState<string[]>([]);
+  const [menuIndex, setMenuIndex] = useState(0);
 
   useEffect(() => {
     const sel = window.getSelection();
@@ -71,6 +72,7 @@ export const App: React.FC = () => {
     // don't make a request if the word hasn't changed!
     if (!currentWordRange || currentWord === currentWordRange.word) return;
     setLoadingResults(true);
+    setMenuIndex(0);
     searchThesaurusDebounced(currentWord)
       .then(response => response.json())
       .then((results: apiResult[]) => {
@@ -82,6 +84,30 @@ export const App: React.FC = () => {
   const handleChange = (value: Node[]) => {
     setValue(value);
     updateCurrentWord();
+  };
+
+  const handleKeyDown = (event: KeyboardEvent) => {
+    // make sure the thesaurus is displayed first and that it contains words
+    if (loadingResults || !thesaurusResults.length) return;
+
+    switch (event.key) {
+      case "ArrowDown":
+        event.preventDefault();
+        setMenuIndex(prevState => (prevState + 1) % thesaurusResults.length);
+        break;
+      case "ArrowUp":
+        event.preventDefault();
+        setMenuIndex(prevState => {
+          if (prevState - 1 < 0) return thesaurusResults.length - 1;
+          return prevState - 1;
+        });
+        break;
+      case "Enter": {
+        event.preventDefault();
+        handleInsertWord(menuIndex);
+        break;
+      }
+    }
   };
 
   const handleInsertWord = (index: number) => {
@@ -115,7 +141,7 @@ export const App: React.FC = () => {
             value={value}
             onChange={value => handleChange(value)}
           >
-            <Editable />
+            <Editable onKeyDown={(e: KeyboardEvent) => handleKeyDown(e)} />
           </Slate>
         </EditorStyles>
       </Container>
@@ -124,6 +150,8 @@ export const App: React.FC = () => {
           cursorPosition={cursorPosition}
           currentWords={thesaurusResults}
           onClick={index => handleInsertWord(index)}
+          onMouseOver={index => setMenuIndex(index)}
+          menuIndex={menuIndex}
         />
       )}
     </>
